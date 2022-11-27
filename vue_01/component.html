@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--view层 模板-->
+<div id="app">
+<!--    传递给组件中的值：props-->
+    <adsh v-for="item in items" v-bind:id="item"></adsh>
+</div>
+</body>
+
+<!--导入js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+    //定义一个Vue组件
+    Vue.component("adsh",{
+        props: ['id'],
+        template: '<li>{{id}}</li>'
+    });
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            items: [
+                'java',
+                'python',
+                'linux'
+            ]
+        }
+    });
+</script>
+</body>
+</html>

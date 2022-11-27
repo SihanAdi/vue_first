@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--view层 模板-->
+<div id="app">
+  <input type="text" v-model="message">{{message}}
+  <hr>
+  sex:
+  <input type="radio" name="sex" value="male" v-model="adsh">male
+  <input type="radio" name="sex" value="female" v-model="adsh">female
+  <p>
+    checked: {{adsh}}
+  </p>
+  <hr>
+  <select v-model="select">
+    <option value="" disabled>--please choose--</option>
+    <option>a</option>
+    <option>b</option>
+    <option>c</option>
+  </select>
+  <br>
+  value: {{select}}
+</div>
+
+
+</body>
+
+<!--导入js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data: {
+      message: 'A',
+      adsh:'',
+      select:''
+    }
+  })
+</script>
+</body>
+</html>
